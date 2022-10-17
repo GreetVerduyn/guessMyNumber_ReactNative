@@ -1,0 +1,5 @@
+I started this project by creating a folder for my screens and a folder for the other components.
+
+When I look for Github react native, I find the source code.
+In Libraries, Components, Button.js I find a return, so I use it in my code as well.
+
