@@ -1,8 +1,15 @@
 import {StyleSheet, ImageBackground} from 'react-native';
-import StartGameScreen from "./screens/startGameScreen";
 import {LinearGradient} from "expo-linear-gradient";
 
+import StartGameScreen from "./screens/startGameScreen";
+import GameScreen from "./screens/GameScreen";
+
 export default function App() {
+    let screen = {StartGameScreen}
+
+    if(pickedNumber){
+        screen= {GameScreen}
+    }
     return (
         <LinearGradient
             colors={['#3882cc', '#e3c66a']}
@@ -14,7 +21,7 @@ export default function App() {
                 style={styles.screen}
                 imageStyle={styles.backgroundImage}
             >
-                <StartGameScreen/>
+                {screen}
             </ImageBackground>
         </LinearGradient>
     );

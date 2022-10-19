@@ -6,25 +6,26 @@ import PrimaryButton from "../components/PrimaryButton";
 function StartGameScreen() {
     const [enteredNumber, setEnteredNumber] = useState('')
 
-    function numberInputHandler(enteredText){
+    function numberInputHandler(enteredText) {
         setEnteredNumber(enteredText)
     }
 
-    function resetInputHandler(){
+    function resetInputHandler() {
         setEnteredNumber('');
     }
 
-    function confirmInputHandler(){
-const chosenNumber = parseInt(enteredNumber);  // convert input to number
-        if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber>99){
-            Alert.alert
-            ('Invalid number',
-             'The number needs to be between 1 and 99.'
-            [{text: 'Okay', style: 'destructive', onPress: resetInputHandler}]
+    function confirmInputHandler() {
+        const chosenNumber = parseInt(enteredNumber);  // convert input to number
+
+        if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+            Alert.alert(
+                'Invalid number!',
+                'The number needs to be between 1 and 99.',
+                [{text: 'Okay', onPress: resetInputHandler, style: 'destructive'}]
             );
             return;
         }
-        console.log('Valid number')
+        setEnteredNumber({pickedNumber})
     }
 
     return (
@@ -38,12 +39,11 @@ const chosenNumber = parseInt(enteredNumber);  // convert input to number
             />
             <View style={styles.buttons}>
                 <View style={styles.button}>
-                    <PrimaryButton onPress ={resetInputHandler}>Reset</PrimaryButton>
+                    <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
                 </View>
                 <View style={styles.button}>
                     <PrimaryButton buttonPressed={confirmInputHandler}>Confirm</PrimaryButton>
                 </View>
-
             </View>
         </View>
     );
@@ -74,14 +74,14 @@ const styles = StyleSheet.create({
         color: '#eeb807',
         marginVertical: 20,
         fontWeight: 'bold',
-        textAlign:'center',
-flex: 3,
+        textAlign: 'center',
+        flex: 3,
     },
     buttons: {
         flexDirection: 'row',
         flex: 2,
     },
-    button:{
+    button: {
         width: 100,
     }
 })

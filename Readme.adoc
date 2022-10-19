@@ -11,6 +11,8 @@ In Libraries, Components, Button.js, and I use it in my code.
 By using 'Pressable', the color of the button changes when pressing on them.
 And by adding some styles I can change the lay-out as wanted.
 
-For the background I use a LinearGradient and I download a picture, wich I can use as background image.
-By adapting the picture's opacity, I can make a nice beckground.
+For the background I use a LinearGradient and I download a picture, which I can use as background image.
+By adapting the picture's opacity, I can make a nice background.
 
+When the entered number is smaller than 0, or bigger than 99, I show an alert.
+By importing Alert from React-Native and giving it a title, a message, a text to confirm and an eventHandler.
