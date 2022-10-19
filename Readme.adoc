@@ -16,3 +16,7 @@ By adapting the picture's opacity, I can make a nice background.
 
 When the entered number is smaller than 0, or bigger than 99, I show an alert.
 By importing Alert from React-Native and giving it a title, a message, a text to confirm and an eventHandler.
+
+To be able to use a certain layout multiple times, I made a separate component for a title.
+I can then use this component several times, as desired.
+
