@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
         color: Colors.primary_yellow,
         textAlign: 'center',
         padding: 15,
-        borderWidth: 2,
+        borderWidth: 3,
         borderColor: Colors.primary_yellow,
+        borderRadius: 15,
     }
 })

@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: Colors.primary_blue,
         elevation: 10,
-        shadowColor: '#101e2c',
+        shadowColor: Colors.shadow_blue,
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.30,
         shadowRadius: 8,

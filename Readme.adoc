@@ -20,3 +20,6 @@ By importing Alert from React-Native and giving it a title, a message, a text to
 To be able to use a certain layout multiple times, I made a separate component for a title.
 I can then use this component several times, as desired.
 
+I also make a file where I store all colors I used. This way I can refer to it,
+and don't need to look for the exact colors in the code.
+

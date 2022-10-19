@@ -12,7 +12,7 @@ function PrimaryButton({children, buttonPressed}) {
                         : styles.buttonInnerContainer
                 }
                 onPress={buttonPressed}
-                android_ripple={{color: '#77a3ce'}}
+                android_ripple={{color: Colors.gradient_blue}}
             >
                 <Text style={styles.buttonText}>
                     {children}
