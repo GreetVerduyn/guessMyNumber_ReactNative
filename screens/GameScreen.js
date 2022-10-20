@@ -1,11 +1,14 @@
 import {View, StyleSheet, Alert} from "react-native";
 import {useState, useEffect} from "react";
+import {Ionicons} from '@expo/vector-icons';
+
 
 import Title from "../components/Title";
 import NumberContainer from "../components/NumberContainer";
 import PrimaryButton from "../components/PrimaryButton";
 import Card from "../components/card";
 import Instructions from "./Instructions";
+import Colors from "../constants/colors";
 
 
 function generateRandomBetween(min, max, exclude) {
@@ -63,10 +66,14 @@ function GameScreen({userNumber, onGameOver}) {
                 <Instructions>hoger of lager? </Instructions>
                 <View style={styles.buttons}>
                     <View style={styles.button}>
-                        <PrimaryButton buttonPressed={nextGuessHandler.bind(this, 'lower')}>-</PrimaryButton>
+                        <PrimaryButton buttonPressed={nextGuessHandler.bind(this, 'lower')}>
+                            <Ionicons name="remove-circle-outline" size={24} color= '#e3c66a' />
+                        </PrimaryButton>
                     </View>
                     <View style={styles.button}>
-                        <PrimaryButton buttonPressed={nextGuessHandler.bind(this, 'greater')}>+</PrimaryButton>
+                        <PrimaryButton buttonPressed={nextGuessHandler.bind(this, 'greater')}>
+                            <Ionicons name="add-circle-outline" size={24} color='#e3c66a' />
+                        </PrimaryButton>
                     </View>
 
                 </View>
