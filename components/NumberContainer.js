@@ -13,8 +13,8 @@ export default NumberContainer
 
 const styles= StyleSheet.create({
     container:{
-        borderWidth: 2,
-        borderColor: Colors.button_yellow,
+        borderWidth: 3,
+        borderColor: Colors.border_yellow,
         padding: 5,
         margin: 10,
         borderRadius: 15,
