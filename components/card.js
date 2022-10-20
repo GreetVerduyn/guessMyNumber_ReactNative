@@ -15,7 +15,7 @@ export default Card
 const styles = StyleSheet.create({
     card: {
         alignItems: 'center',
-        height: 210,
+        height: 230,
         width: 280,
         marginTop: 35,
         marginHorizontal: 30,

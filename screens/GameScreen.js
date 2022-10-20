@@ -61,9 +61,14 @@ function GameScreen({userNumber, onGameOver}) {
             <NumberContainer>{currentGuess}</NumberContainer>
             <Card>
                 <Instructions>hoger of lager? </Instructions>
-                <View>
-                    <PrimaryButton buttonPressed={nextGuessHandler.bind(this, 'lower')}>-</PrimaryButton>
-                    <PrimaryButton buttonPressed={nextGuessHandler.bind(this, 'greater')}>+</PrimaryButton>
+                <View style={styles.buttons}>
+                    <View style={styles.button}>
+                        <PrimaryButton buttonPressed={nextGuessHandler.bind(this, 'lower')}>-</PrimaryButton>
+                    </View>
+                    <View style={styles.button}>
+                        <PrimaryButton buttonPressed={nextGuessHandler.bind(this, 'greater')}>+</PrimaryButton>
+                    </View>
+
                 </View>
 
                 {/*button -*/}
@@ -82,6 +87,12 @@ const styles = StyleSheet.create({
         padding: 35,
         alignItems: 'center',
     },
-
+    buttons: {
+        flexDirection: 'row',
+        flex: 2,
+    },
+    button: {
+        width: 100,
+    },
 })
 
