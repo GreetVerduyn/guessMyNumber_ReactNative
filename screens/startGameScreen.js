@@ -1,7 +1,10 @@
 import {useState} from "react";
-import {StyleSheet, TextInput, View, Alert} from "react-native";
+import {StyleSheet, TextInput, View, Alert, Text} from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import Colors from "../constants/colors";
+import Title from "../components/Title";
+import Card from "../components/card";
+import Instructions from "./Instructions";
 
 
 function StartGameScreen({onPickNumber}) {
@@ -30,7 +33,10 @@ function StartGameScreen({onPickNumber}) {
     }
 
     return (
-        <View style={styles.inputContainer}>
+        <View style={styles.screen}>
+            <Title>Raad mijn nummer</Title>
+           <Card>
+            <Instructions>Geef een nummer in</Instructions>
             <TextInput
                 style={styles.input}
                 maxLength={2}
@@ -43,37 +49,29 @@ function StartGameScreen({onPickNumber}) {
                     <PrimaryButton buttonPressed={resetInputHandler}>Reset</PrimaryButton>
                 </View>
                 <View style={styles.button}>
-                    <PrimaryButton buttonPressed={confirmInputHandler}>Confirm</PrimaryButton>
+                    <PrimaryButton buttonPressed={confirmInputHandler}>Start</PrimaryButton>
                 </View>
             </View>
+           </Card>
         </View>
     );
 }
 
 export default StartGameScreen;
 const styles = StyleSheet.create({
-    inputContainer: {
-        alignItems: 'center',
-        height: 200,
-        marginTop: 50,
-        marginHorizontal: 30,
-        padding: 14,
-        borderRadius: 15,
-        backgroundColor: Colors.primary_blue,
-        elevation: 10,
-        shadowColor: Colors.shadow_blue,
-        shadowOffset: {width: 0, height: 2},
-        shadowOpacity: 0.30,
-        shadowRadius: 8,
+    screen:{
+        flex:1,
+        marginTop: 100,
+        alignItems: 'center'
     },
-    input: {
-        height: 55,
+      input: {
+        height: 35,
         width: 55,
         fontSize: 30,
         borderBottomColor: Colors.primary_yellow,
         borderBottomWidth: 2,
         color: Colors.primary_yellow,
-        marginVertical: 20,
+        marginVertical: 15,
         fontWeight: 'bold',
         textAlign: 'center',
         flex: 3,
