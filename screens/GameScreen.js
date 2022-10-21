@@ -8,7 +8,6 @@ import NumberContainer from "../components/NumberContainer";
 import PrimaryButton from "../components/PrimaryButton";
 import Card from "../components/card";
 import Instructions from "./Instructions";
-import Colors from "../constants/colors";
 
 
 function generateRandomBetween(min, max, exclude) {
@@ -62,7 +61,7 @@ function GameScreen({userNumber, onGameOver}) {
         <View style={styles.screen}>
             <Title>Opponent's Guess</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
-            <Card>
+            <Card style={styles.card}>
                 <Instructions>hoger of lager? </Instructions>
                 <View style={styles.buttons}>
                     <View style={styles.button}>
@@ -78,7 +77,6 @@ function GameScreen({userNumber, onGameOver}) {
 
                 </View>
 
-                {/*button -*/}
             </Card>
             {/*<View>LOG ROUNDS</View>*/}
         </View>
@@ -93,6 +91,10 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 35,
         alignItems: 'center',
+        marginTop: 50,
+    },
+    card:{
+        height: 150,
     },
     buttons: {
         flexDirection: 'row',

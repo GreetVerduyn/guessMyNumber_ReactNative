@@ -2,9 +2,9 @@ import {StyleSheet, View} from "react-native";
 import Colors from "../constants/colors";
 
 
-function Card({children}) {
+function Card({children, style}) {
     return (
-        <View style={styles.card}>
+        <View style={[styles.card, style]}>
             {children}
         </View>
     )
@@ -15,7 +15,6 @@ export default Card
 const styles = StyleSheet.create({
     card: {
         alignItems: 'center',
-        height: 230,
         width: 280,
         marginTop: 35,
         marginHorizontal: 30,
@@ -27,7 +26,8 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.30,
         shadowRadius: 8,
-    },
+        height: 250,
+     },
     instructions: {
         fontSize: 22,
         color: Colors.primary_yellow,

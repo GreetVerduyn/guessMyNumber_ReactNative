@@ -35,46 +35,50 @@ function StartGameScreen({onPickNumber}) {
     return (
         <View style={styles.screen}>
             <Title>Raad mijn nummer</Title>
-           <Card>
-            <Instructions>Geef een nummer in</Instructions>
-            <TextInput
-                style={styles.input}
-                maxLength={2}
-                keyboardType={'number-pad'}
-                onChangeText={numberInputHandler}
-                value={enteredNumber}
-            />
-            <View style={styles.buttons}>
-                <View style={styles.button}>
-                    <PrimaryButton buttonPressed={resetInputHandler}>Reset</PrimaryButton>
+            <Card>
+                <View>
+                    <Instructions>Geef een nummer in</Instructions>
+                    <TextInput
+                        style={styles.input}
+                        maxLength={2}
+                        keyboardType={'number-pad'}
+                        onChangeText={numberInputHandler}
+                        value={enteredNumber}
+                    />
+                    <View style={styles.buttons}>
+                        <View style={styles.button}>
+                            <PrimaryButton buttonPressed={resetInputHandler}>Reset</PrimaryButton>
+                        </View>
+                        <View style={styles.button}>
+                            <PrimaryButton buttonPressed={confirmInputHandler}>Start</PrimaryButton>
+                        </View>
+                    </View>
                 </View>
-                <View style={styles.button}>
-                    <PrimaryButton buttonPressed={confirmInputHandler}>Start</PrimaryButton>
-                </View>
-            </View>
-           </Card>
+            </Card>
         </View>
     );
 }
 
 export default StartGameScreen;
 const styles = StyleSheet.create({
-    screen:{
-        flex:1,
+    screen: {
+        flex: 1,
         marginTop: 100,
         alignItems: 'center'
     },
-      input: {
-        height: 35,
+    input: {
+        alignSelf:'center',
+        height: 30,
         width: 55,
         fontSize: 30,
         borderBottomColor: Colors.primary_yellow,
         borderBottomWidth: 2,
         color: Colors.primary_yellow,
-        marginVertical: 15,
+        marginVertical: 10,
         fontWeight: 'bold',
         textAlign: 'center',
-        flex: 3,
+        flex: 2,
+        marginBottom: 30,
     },
     buttons: {
         flexDirection: 'row',

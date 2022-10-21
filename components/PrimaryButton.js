@@ -1,10 +1,10 @@
 import {Text, View, Pressable, StyleSheet} from "react-native";
 import Colors from "../constants/colors";
 
-function PrimaryButton({children, buttonPressed}) {
+function PrimaryButton({children, buttonPressed, style}) {
 
     return (
-        <View style={styles.buttonOuterContainer}>
+        <View style={[styles.buttonOuterContainer, style]}>
             <Pressable
                 style={({pressed}) =>
                     pressed
