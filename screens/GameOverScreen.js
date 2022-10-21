@@ -7,19 +7,19 @@ import Colors from "../constants/colors";
 import PrimaryButton from "../components/PrimaryButton";
 
 
-function GameOverScreen() {
+function GameOverScreen({roundsNumber, userNumber, onStartNewGame}) {
     return (
         <View style={styles.screen}>
             <Card style={styles.card}>
                 <Title style={styles.title}>Game Over</Title>
                 <View>
-                    <Text style={styles.text}>Nummer gevonden na x keer raden</Text>
+                    <Text style={styles.text}>Nummer gevonden na {roundsNumber} keer raden</Text>
                 </View>
                 <View>
                     <NumberContainer></NumberContainer>
                 </View>
             </Card>
-            <PrimaryButton style={styles.button}>Nieuw spel</PrimaryButton>
+            <PrimaryButton buttonPressed={onStartNewGame} style={styles.button}>Nieuw spel</PrimaryButton>
         </View>
     );
 }
