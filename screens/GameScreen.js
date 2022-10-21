@@ -3,11 +3,12 @@ import {useState, useEffect} from "react";
 import {Ionicons} from '@expo/vector-icons';
 
 
-import Title from "../components/Title";
-import NumberContainer from "../components/NumberContainer";
-import PrimaryButton from "../components/PrimaryButton";
-import Card from "../components/card";
-import Instructions from "./Instructions";
+import Title from "../components/UI/Title";
+import NumberContainer from "../components/game/NumberContainer";
+import PrimaryButton from "../components/UI/PrimaryButton";
+import Card from "../components/UI/card";
+import Instructions from "../components/UI/Instructions";
+import GuessLogItem from "../components/game/GuessLogItem";
 
 
 function generateRandomBetween(min, max, exclude) {
@@ -64,6 +65,8 @@ function GameScreen({userNumber, onGameOver}) {
         setGuessRounds(prevGuessRounds => [newRndNumber, ...prevGuessRounds]);
     }
 
+    const guessRoundslistLength = guessRounds.length;
+
     return (
         <View style={styles.screen}>
             <Title>Opponent's Guess</Title>
@@ -85,13 +88,17 @@ function GameScreen({userNumber, onGameOver}) {
                 </View>
 
             </Card>
-            <View>
+            <View style={styles.listContainer}>
                 <FlatList
                     data={guessRounds}
-                    renderItem={(itemData) => <Text>{itemData.itme}</Text>}
-                    keyExtractor={(item) =>item}
+                    renderItem={(itemData) => (
+                        <GuessLogItem
+                        roundNumber={guessRoundslistLength - itemData.index}
+                        guess={itemData.item}
+                        />
+                    )}
+                    keyExtractor={(item) => item}
                 />
-                {guessRounds.map(guessRound => <Text key={guessRound}>{guessRound}</Text>)}
             </View>
         </View>
 
@@ -117,5 +124,9 @@ const styles = StyleSheet.create({
     button: {
         width: 100,
     },
+    listContainer:{
+        flex:1,
+        padding: 10,
+    }
 })
 

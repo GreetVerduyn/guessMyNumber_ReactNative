@@ -1,10 +1,9 @@
 import {Image, StyleSheet, Text, View} from "react-native";
-import Card from "../components/card";
-import Title from "../components/Title";
-import GameScreen from "./GameScreen";
-import NumberContainer from "../components/NumberContainer";
+import Card from "../components/UI/card";
+import Title from "../components/UI/Title";
+import NumberContainer from "../components/game/NumberContainer";
 import Colors from "../constants/colors";
-import PrimaryButton from "../components/PrimaryButton";
+import PrimaryButton from "../components/UI/PrimaryButton";
 
 
 function GameOverScreen({roundsNumber, userNumber, onStartNewGame}) {
@@ -16,7 +15,7 @@ function GameOverScreen({roundsNumber, userNumber, onStartNewGame}) {
                     <Text style={styles.text}>Nummer gevonden na {roundsNumber} keer raden</Text>
                 </View>
                 <View>
-                    <NumberContainer></NumberContainer>
+                    <NumberContainer>{userNumber}</NumberContainer>
                 </View>
             </Card>
             <PrimaryButton buttonPressed={onStartNewGame} style={styles.button}>Nieuw spel</PrimaryButton>
