@@ -32,7 +32,7 @@ function GameScreen({userNumber, onGameOver}) {
 
     useEffect(() => {
         if (currentGuess === userNumber) {
-            onGameOver()
+            onGameOver(guessRounds.length);
         }
     }, [currentGuess, userNumber, onGameOver]);
 
@@ -69,7 +69,7 @@ function GameScreen({userNumber, onGameOver}) {
 
     return (
         <View style={styles.screen}>
-            <Title>Opponent's Guess</Title>
+            <Title>Is het dit nummer?</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
             <Card style={styles.card}>
                 <Instructions>hoger of lager? </Instructions>
